@@ -1,4 +1,4 @@
-<p align="center">
+<img width="1920" height="1080" alt="Screenshot 2026-02-14 072826" src="https://github.com/user-attachments/assets/430d70bd-518c-4d0d-9dd2-3d871e83d38c" /><p align="center">
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
@@ -83,15 +83,17 @@ List the key features of your project:
 ### For Software:
 
 #### Screenshots (Add at least 3)
+<img width="1920" height="1080" alt="Screenshot 2026-02-14 072844" src="https://github.com/user-attachments/assets/c1e92013-075b-4b28-9fc2-99eb0a0d41b9" />
 
-![Screenshot1]()
-*Add caption explaining what this shows*
+withdraw savings window asking to select upi app
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+<img width="1920" height="1080" alt="Screenshot 2026-02-14 072826" src="https://github.com/user-attachments/assets/6830a5bc-d59d-4252-8513-a7db71da2062" />
+t2]
+add to savings window
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![<img width="1920" height="1080" alt="Screenshot 2026-02-14 072800" src="https://github.com/user-attachments/assets/60bd54fd-47b1-4d63-99fc-517f9be76520" />
+enshot3])
+dashboard displaying savings balance,spending balance,add savings,spend money,withdraw savings
 
 #### Diagrams
 
