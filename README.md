@@ -2,27 +2,28 @@
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# [fakeymakey] 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
+### Team Name: [Dual nova]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Ardra Ajith] - [LBSITW poojappura]
+- Member 2: [Anna Rajan] - [LBSITW poojappura]
 
 ### Hosted Project Link
-[mention your project hosted link here]
+[https://fakeymakey-wjwn.vercel.app/]
 
 ### Project Description
-[2-3 lines about what your project does]
+[website which gets access to upi apps ]
 
 ### The Problem statement
-[What problem are you solving?]
+[To prevent overspending due to feasibilty of online payment.ie, we cant' save ev
+en if we want to]
 
 ### The Solution
-[How are you solving it?]
+[for this we are planning to launch a website which catogarise the amount and split into different wallets]
 
 ---
 
@@ -31,10 +32,10 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [html,css]
+- Frameworks used: []
+- Libraries used: []
+- Tools used: [html,VS Code, Git,]
 
 **For Hardware:**
 - Main components: [List main components]
@@ -46,10 +47,10 @@
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [split money into different catogories]
+- Feature 2: [transaction summary alert ]
+- Feature 3: [savings will not display as available balance]
+- Feature 4: [ dashboard]
 
 ---
 
@@ -83,7 +84,7 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
+![Screenshot1]()
 *Add caption explaining what this shows*
 
 ![Screenshot2](Add screenshot 2 here with proper name)
@@ -101,7 +102,7 @@ List the key features of your project:
 
 **Application Workflow:**
 
-![Workflow](docs/workflow.png)
+![Workflow]()
 *Add caption explaining your workflow*
 
 ---
@@ -382,11 +383,8 @@ If you used AI tools during development, document them here for transparency:
 - Example: "Code review and optimization suggestions"
 
 **Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
-
-**Percentage of AI-generated code:** [Approximately X%]
+there should be a window displaying available balance before and after  payment..and the withdrawl from savings option shouldnt be displayed at first..it should be provided as an option and if the user opt for it, then it should be appeared in new window..also add the upi app options before any payment(spending or savings)
+**Percentage of AI-generated code:** [Approximately 50%]
 
 **Human Contributions:**
 - Architecture design and planning
@@ -400,9 +398,9 @@ If you used AI tools during development, document them here for transparency:
 
 ## Team Contributions
 
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
+- [Ardra Ajith ]: [Specific contributions - e.g., Frontend development]
+- [ Anna Rajan]: [Specific contributions - e.g., Frontend development]
+
 
 ---
 
