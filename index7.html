@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Budget Wallet</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI';
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:white;
+}
+
+.page{
+  display:none;
+  width:420px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+input,button,select{
+  width:90%;
+  padding:10px;
+  margin:8px;
+  border:none;
+  border-radius:10px;
+}
+
+button{
+  background:white;
+  color:#764ba2;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#f2f2f2;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.modal-content{
+  background:white;
+  color:black;
+  padding:20px;
+  border-radius:15px;
+  width:300px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page" id="page1">
+<h2>💳 Smart Budget Wallet</h2>
+<input type="number" id="totalInput" placeholder="Enter Total Amount">
+<button onclick="startApp()">Start</button>
+</div>
+
+<!-- PAGE 2 DASHBOARD -->
+<div class="page" id="page2">
+<h2>📊 Dashboard</h2>
+<h3>Available Balance: ₹ <span id="spendingDisplay">0</span></h3>
+<h3>Savings: ₹ <span id="savingsDisplay">0</span></h3>
+
+<button onclick="showPage(3)">Add Savings</button>
+<button onclick="showPage(4)">Spend Money</button>
+<button onclick="showPage(5)">Withdraw From Savings</button>
+<button onclick="showPage(1)">Back</button>
+</div>
+
+<!-- PAGE 3 ADD SAVINGS -->
+<div class="page" id="page3">
+<h2>💰 Add To Savings</h2>
+<input type="number" id="savingsAmount" placeholder="Enter Amount">
+<button onclick="initiateAction('addSavings')">Continue</button>
+<button onclick="showPage(2)">Back</button>
+</div>
+
+<!-- PAGE 4 SPEND -->
+<div class="page" id="page4">
+<h2>💸 Spend Money</h2>
+<input type="number" id="spendAmount" placeholder="Enter Amount">
+<button onclick="initiateAction('spend')">Continue</button>
+<button onclick="showPage(2)">Back</button>
+</div>
+
+<!-- PAGE 5 WITHDRAW -->
+<div class="page" id="page5">
+<h2>🏦 Withdraw From Savings</h2>
+<input type="number" id="withdrawAmount" placeholder="Enter Amount">
+<button onclick="initiateAction('withdraw')">Continue</button>
+<button onclick="showPage(2)">Back</button>
+</div>
+
+<!-- UPI MODAL -->
+<div class="modal" id="upiModal">
+  <div class="modal-content">
+    <h3>Select UPI App</h3>
+    <select id="upiSelect">
+      <option>Google Pay</option>
+      <option>PhonePe</option>
+      <option>Paytm</option>
+    </select>
+    <br><br>
+    <button onclick="processPayment()">Confirm</button>
+  </div>
+</div>
+
+<script>
+
+let total=0;
+let spending=0;
+let savings=0;
+let action="";
+let amount=0;
+
+function showPage(page){
+  document.querySelectorAll(".page").forEach(p=>p.style.display="none");
+  document.getElementById("page"+page).style.display="block";
+}
+
+showPage(1);
+
+function startApp(){
+  total=parseFloat(document.getElementById("totalInput").value);
+  if(!total || total<=0){
+    alert("Enter valid amount");
+    return;  
+  }
+  spending=total;
+  savings=0;
+  updateUI();   
+  showPage(2);
+}
+
+function updateUI(){
+  document.getElementById("spendingDisplay").innerText=spending;
+  document.getElementById("savingsDisplay").innerText=savings;
+}
+
+function initiateAction(type){
+
+  action=type;
+
+  if(type==="addSavings"){
+    amount=parseFloat(document.getElementById("savingsAmount").value);
+    if(!amount || amount>spending){
+      alert("Insufficient Balance");
+      return;
+    }
+  }
+
+  if(type==="spend"){
+    amount=parseFloat(document.getElementById("spendAmount").value);
+    if(!amount || amount>spending){
+      alert("Insufficient Bank Balance");
+      return;
+    }
+  }
+
+  if(type==="withdraw"){
+    amount=parseFloat(document.getElementById("withdrawAmount").value);
+    if(!amount || amount>savings){
+      alert("Insufficient Savings");
+      return;
+    }
+  }
+
+  document.getElementById("upiModal").style.display="flex";
+}
+
+function processPayment(){
+
+  let upi=document.getElementById("upiSelect").value;
+
+  let beforeSpending=spending;
+  let beforeSavings=savings;
+
+  if(action==="addSavings"){
+    savings+=amount;
+    spending-=amount;
+  }
+
+  if(action==="spend"){
+    spending-=amount;
+  }
+
+  if(action==="withdraw"){
+    savings-=amount;
+    spending+=amount;
+  }
+
+  updateUI();
+  document.getElementById("upiModal").style.display="none";
+
+  alert(
+    "💳 Transaction Summary\n\n"+
+    "UPI App: "+upi+
+    "\nAmount: ₹"+amount+
+    "\n\nAvailable Before: ₹"+beforeSpending+
+    "\nAvailable After: ₹"+spending
+  );
+
+  showPage(2);
+}
+
+</script>
+
+</body>
+</html>
